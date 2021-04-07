@@ -6,6 +6,8 @@ RUN apk add --no-cache git
 RUN go get github.com/ericchiang/pup
 
 WORKDIR $GOPATH/src/github.com/ericchiang/pup
+RUN pwd
+RUN ls -al
 
 RUN go build -a -ldflags '-s -w -extldflags "-static"' -o /bin/pup
 
